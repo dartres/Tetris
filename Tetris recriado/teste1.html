@@ -40,16 +40,10 @@
    
   </table>
   <audio src="./audio/perdeu.mp3" class="audiofim" hidden></audio>
-  <audio src="./audio/musica.mp3" class="musica"></audio>
+  <audio src="audio/musica.mp3" loop autoplay=""></audio>
   
 <script>
 
-document.addEventListener('DOMContentLoaded', function () {
-    var audio = new Audio('musica.mp3');
-    audio.loop = true;
-
-    audio.play();
-});
 
   // https://tetris.fandom.com/wiki/Tetris_Guideline
   audiofim = document.querySelector('.audiofim')
