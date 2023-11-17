@@ -35,7 +35,7 @@ body {
 .buttons {
   display: table;
   height: 100%;
-  width: 100%;
+  width: 95vw;
 }
 
 .container {
@@ -180,11 +180,9 @@ body {
   height: 100%;
 }
 .barbie1{
-  height: 75%;
+  height: 80%;
 
 }
 .barbie2{
   height: 80%;
-  margin-left: -10%;
-  border-radius: 100px;
 }

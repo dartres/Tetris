@@ -22,7 +22,7 @@ body {
   width: 100vw;
 }
 
-.bodyindex {
+.bodyp1 {
   background-image: url(images/fundo.png);
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
@@ -35,7 +35,7 @@ body {
 .buttons {
   display: table;
   height: 100%;
-  width: 100%;
+  width: 90%;
 }
 
 .container {
