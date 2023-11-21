@@ -2,22 +2,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tetris Original</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="./util/style.css">
-  
+  <link rel="icon" type="image/x-icon" href="./build/icon.ico">
+    <title>Barbie | duo</title>
+    <link rel="shortcut icon" href="images/logotitle.png" type="image/x-icon">
 </head>
-
 <body vlink="white" class="bodyp1">
+  <audio loop hidden id="musicaLoop">
+        <source src="audio/musica.mp3" type="audio/mp3">
+    </audio>
 
   <table class="tabela2p">
     <tr>
       <td class="btnsTD" >
        <section class="buttons">
-  <div class="container2p">
-          <span>  
-            <a class="btnfos btnfos-2" id="restartButton" onclick="window.location.reload()">Reiniciar</a><br>
-            <a class="btnfos btnfos-2" id="homeButton" href="index.html">Início</a> 
+  <div >
+          <span style="display: flex; flex-direction: column;justify-content: center; align-items: center; border: hidden;" class="container2p">  
+            <div class="btns">
+              <a class="btnfos btnfos-2" id="restartButton" onclick="window.location.reload()">Reiniciar</a><br>
+              <a class="btnfos btnfos-2" id="homeButton" href="index.html">Início</a>
+            </div>
+
+            <span style="display: flex;width: 8vw; height:4vh;font-size: 90%; justify-content: center; align-items: center;margin-left: -3%;border-radius: 35px;  background-color:rgb(250, 250, 250); font-family: 'Crimson Text', serif;font-weight: bold;" >
+            
+              <label style="color: #EC4398; ">Música:</label>
+              <label class="switch" >
+                <input type="checkbox" id="musica">
+                <span class="slider round"></span>
+
+            </div>
+
         </span>
   </div>
     </section>
@@ -40,10 +55,28 @@
    
   </table>
   <audio src="./audio/perdeu.mp3" class="audiofim" hidden></audio>
-  <audio src="audio/musica.mp3" loop autoplay=""></audio>
+ 
   
 <script>
 
+  let musicaBtn = document.querySelector('#musica')
+  let on_off = Number(1)
+  let musicaLoop = document.querySelector("#musicaLoop")
+
+  musicaBtn.addEventListener('click', ()=>{
+  
+      if(on_off == 1){
+        on_off = Number(0)
+        musicaLoop.play()
+
+        musicaBtn.style.backgroundColor='purple'
+
+      }else if(on_off == 0){
+        on_off = Number(1)
+        musicaLoop.pause()
+
+      }
+  })
 
   // https://tetris.fandom.com/wiki/Tetris_Guideline
   audiofim = document.querySelector('.audiofim')
@@ -220,13 +253,13 @@
   const colors = {
     'I': '#8758FC',
     'O': '#E32B4F',
-    'T': '#FFFFFF',
-    'S': '#1EAFC7',
-    'Z': '#D64034',
-    'J': '#00FFBA',
-    'L': '#FF879B',
-    'M': '#FFA7D6',
-    'H': '#797678',
+    'T': '#C71585',
+    'S': '#FF1493',
+    'Z': '#FF69B4',
+    'J': '#DC143C',
+    'L': '#9932CC',
+    'M': '#87CEEB',
+    'H': '#FF00FF',
     'F': '#FF009E'
   };
 
@@ -448,13 +481,13 @@ for (let row = 0; row < 17; row++) {
   const colors1 = {
     'I': '#8758FC',
     'O': '#E32B4F',
-    'T': '#ffffff',
-    'S': '#1EAFC7',
-    'Z': '#D64034',
-    'J': '#00FFBA',
-    'L': '#FF879B',
-    'M': '#FFA7D6',
-    'H': '#797678',
+    'T': '#C71585',
+    'S': '#FF1493',
+    'Z': '#FF69B4',
+    'J': '#DC143C',
+    'L': '#9932CC',
+    'M': '#87CEEB',
+    'H': '#FF00FF',
     'F': '#FF009E'
   };
 
@@ -465,13 +498,13 @@ for (let row = 0; row < 17; row++) {
   // Função para atualizar a pontuação do jogador 1
   function updatePlayer1Score(score) {
     player1Score += 10;
-    document.getElementById('score1').innerText = `Player 1- Pontos: ${player1Score}`;
+    document.getElementById('score1').innerText = `Pontos: ${player1Score}`;
   }
 
   // Função para atualizar a pontuação do jogador 2
   function updatePlayer2Score(score) {
     player2Score += 10;
-    document.getElementById('score2').innerText = `Player 2- Pontos: ${player2Score}`;
+    document.getElementById('score2').innerText = `Pontos: ${player2Score}`;
   }
 
   let tetromino1 = getNextTetromino1();
@@ -691,12 +724,6 @@ for (let row = 0; row < 17; row++) {
   });
 
   rAF1 = requestAnimationFrame(loop1);
-
-
-
-
-
-
 
 </script>
 

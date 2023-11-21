@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
@@ -8,32 +7,54 @@
     <title>Barbie | Tetris</title>
     <link rel="stylesheet" href="estilo1.css">
     <link rel="shortcut icon" href="images/logotitle.png" type="image/x-icon">
-    
-</head>
+    <style>
+        .container {
+            text-align: center;
+            align-items: center;
+            display: flex;
+            
+        }
+        .bloco{
+            display: flex;
+           margin-top: 500px;
 
+        }
+
+
+    </style>
+</head>
 <body>
+
 <section class="buttons">
-  <div class="container">
-    <div class="btn1Player">
-             <a class="btnfos btnfos-1" href="tetris1.html">
+    <div class="container">
+   <img class="bloco" src="./images/logooo.png">
+
+
+
+        <div class="btn1Player">
+            <a class="btnfos btnfos-1" href="tetris1.html">
                 <svg>
-                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                    <rect x="0" y="0" fill="none" width="100%" height="100%"/>
                 </svg>
                 1 JOGADOR<br>
                 <img class="barbie1" src="./images/1p.png"><br>
             </a> 
-    </div>    
-    <div class="btn1Player">
+        </div>
+
+
+
+
+        <div class="btn1Player">
             <a class="btnfos btnfos-1" href="teste1.html">
                 <svg>
-                  <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                 </svg>
-                 2 JOGADORES
-                 <img class="barbie2" src="./images/2p.png"><br>
+                    <rect x="0" y="0" fill="none" width="100%" height="100%"/>
+                </svg>
+                2 JOGADORES
+                <img class="barbie2" src="./images/2p.png"><br>
             </a> 
-            <audio src="audio/musica.mp3" loop autoplay=""></audio>
-    </div> 
+        </div> 
     </div>
-</body>
+</section>
 
+</body>
 </html>

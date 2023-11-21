@@ -2,15 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tetris Original</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="./util/style.css">
+  <link rel="icon" type="image/x-icon" href="./build/icon.ico">
+    <title>Barbie | solo</title>
+    <link rel="shortcut icon" href="images/logotitle.png" type="image/x-icon">
  
   </style>
   
 </head>
 
 <body vlink="white" class="bodyp1">
+   <audio loop hidden id="musicaLoop">
+        <source src="audio/musica.mp3" type="audio/mp3">
+    </audio>
 <table >
   <tr>
      <td class="btnsTD" >
@@ -21,7 +26,15 @@
             <a class="btnfos btnfos-2" id="homeButton" href="index.html">Início</a> 
         </span>
       </div>
+      <span style="display: flex;width: 8vw; height:4vh;font-size: 140%; justify-content: center; align-items: center;margin-left: -3%;border-radius: 35px;  background-color:rgb(250, 250, 250); font-family: 'Crimson Text', serif;font-weight: bold;" >
+            
+              <label style="color: #EC4398; ">Música:</label>
+              <label class="switch" >
+                <input type="checkbox" id="musica">
+                <span class="slider round"></span>
     </section>
+
+
     </td>
     <td class="canvas1" height="546" >
         <canvas width="320" height="546" id="game" ></canvas>      
@@ -32,10 +45,29 @@
   </tr>
 </table>
 
+
   <audio src="./audio/perdeu.mp3" class="audiofim" hidden></audio>
-  <audio src="audio/musica.mp3" loop autoplay=""></audio>
+  
   
 <script>
+  let musicaBtn = document.querySelector('#musica')
+  let on_off = Number(1)
+  let musicaLoop = document.querySelector("#musicaLoop")
+
+  musicaBtn.addEventListener('click', ()=>{
+  
+      if(on_off == 1){
+        on_off = Number(0)
+        musicaLoop.play()
+
+        musicaBtn.style.backgroundColor='purple'
+
+      }else if(on_off == 0){
+        on_off = Number(1)
+        musicaLoop.pause()
+
+      }
+  })
 
   // https://tetris.fandom.com/wiki/Tetris_Guideline
   audiofim = document.querySelector('.audiofim')
@@ -212,13 +244,13 @@
   const colors = {
     'I': '#8758FC',
     'O': '#E32B4F',
-    'T': '#FFFFFF',
-    'S': '#1EAFC7',
-    'Z': '#D64034',
-    'J': '#00FFBA',
-    'L': '#FF879B',
-    'M': '#FFA7D6',
-    'H': '#797678',
+    'T': '#C71585',
+    'S': '#FF1493',
+    'Z': '#FF69B4',
+    'J': '#DC143C',
+    'L': '#9932CC',
+    'M': '#87CEEB',
+    'H': '#4682',
     'F': '#FF009E'
   };
 
@@ -227,7 +259,7 @@
   // Função para atualizar a pontuação do jogador 1
   function updatePlayer1Score(score) {
     player1Score += 10;
-    document.getElementById('score1').innerText = `Player 1- Pontos: ${player1Score}`;
+    document.getElementById('score1').innerText = `Pontos: ${player1Score}`;
   }
 
   let count = 0;
